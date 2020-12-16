@@ -1,4 +1,1 @@
-# CIRAWFilterColorShiftBugTest
-Sample app reproducing Color Shift bug in CIRAWFilter on iOS10
-
-Press the Input/Output button to see the difference between the input and output of CIRAWFilter. There should none.
+Setting both kCIInputAllowDraftModeKey and kCIInputScaleFactorKey on CIRAWFilter created with a ProRaw image results in incorrect resizing of the image. An extra affine transform of a power of 2 down sample factor nearest to the set scale factor is applid. When the scale factor is 0.0825893, an additional scale transform of 1/8 is applid. 
